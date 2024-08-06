@@ -1,5 +1,5 @@
 import { Button, Input, InputGroup, InputLeftElement, InputRightElement, VStack, useToast } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { HiOutlineEye, HiOutlineEyeOff, HiOutlineLockClosed, HiOutlineUser } from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
 import useLogic from "./_logic";

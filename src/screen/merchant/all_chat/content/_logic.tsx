@@ -13,13 +13,24 @@ const Index = () => {
 
     const getServices = async () => {
         setLoading(true);
-        const response: any = await axios.get(`http://localhost:2000/api/services/${params.service_id}`, {
+        const response: any = await axios.get(`http://localhost:2000/api/services/${params?.service_id}`, {
             headers: {
                 "ngrok-skip-browser-warning": 'true'
             }
         });
         setServices(response.data.data);
         setLoading(false);
+    };
+
+    const getServiceForallChat = async (param?: any) => {
+        setLoading(true);
+        const response: any = await axios.get(`http://localhost:2000/api/services/${param}`, {
+            headers: {
+                "ngrok-skip-browser-warning": 'true'
+            }
+        });
+        setLoading(false);
+        return response.data.data;
     };
 
     const getAllChat = async () => {
@@ -52,6 +63,7 @@ const Index = () => {
 
     return {
         getServices,
+        getServiceForallChat,
         getUserByID,
         loading,
         services,
