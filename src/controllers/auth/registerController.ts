@@ -12,6 +12,7 @@ export const userRegister = async (req: Request, res: Response) => {
             if (checkPhoneNumber.data?.length === 0) {
                 const response: any = await supabase.from('users').insert([{
                     role: req.body.role, 
+                    is_approve: req.body.role === "merchant" ? false : true, 
                     username: req.body.username,
                     phone_number: req.body.phone_number, 
                     password: Md5.hashAsciiStr(req.body.password),
