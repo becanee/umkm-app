@@ -1,33 +1,43 @@
-import { Textarea, Card, CardBody, CardFooter, Image, HStack, Button } from "@chakra-ui/react"
+import {
+  Textarea,
+  Card,
+  CardBody,
+  CardFooter,
+  Image,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 
 export const Index = () => {
   return (
     <>
-    <div className="mt-40 flex justify-center">
-    <Card maxW='lg'>
-  <CardBody>
-    <Image
-      src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-      alt='Green double couch with wooden legs'
-      borderRadius='lg'
-    />
-    <HStack mt='6' spacing='3' className="flex justify-center">
-    <IoIosStar />
-    <IoIosStar />
-    <IoIosStar />
-    <IoIosStarOutline />
-    <IoIosStarOutline />
-    </HStack>
-  </CardBody>
-  <CardFooter>
-  <Textarea size="lg" placeholder='Bagaimana pelayanan kami?' />
-  </CardFooter>
-  <Button className="mb-2 w-[6rem] ml-[7rem]"   colorScheme='blue'>Submit</Button>
-</Card>
-    </div>
+      <div className="mt-40 flex justify-center">
+        <Card maxW="lg">
+          <CardBody>
+            <Image
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <HStack mt="6" spacing="3" className="flex justify-center">
+              <IoIosStar />
+              <IoIosStar />
+              <IoIosStar />
+              <IoIosStarOutline />
+              <IoIosStarOutline />
+            </HStack>
+          </CardBody>
+          <CardFooter>
+            <Textarea size="lg" placeholder="Bagaimana pelayanan kami?" />
+          </CardFooter>
+          <Button className="mb-2 w-[6rem] ml-[7rem]" colorScheme="blue">
+            Submit
+          </Button>
+        </Card>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

@@ -53,6 +53,18 @@ const Index = () => {
         setLoading(false);
     };
 
+    const addRating = async (formData: any) => {
+        setLoading(true);
+        const response: any = await axios.post(`http://localhost:2000/api/client-add-rating/${params.chat_id}`, formData, {
+            headers: {
+                "ngrok-skip-browser-warning": 'true'
+            }
+        });
+        await getchatParentHistory();
+        setLoading(false);
+        return response.data.data;
+    };
+
     const sendMessage = async (formData: any) => {
         setLoading(true);
         const response: any = await axios.post(`http://localhost:2000/api/new-message`, formData, {
@@ -74,6 +86,7 @@ const Index = () => {
     }, [])
 
     return {
+        addRating,
         getServices,
         placeOrder,
         sendMessage,
