@@ -65,6 +65,18 @@ const Index = () => {
         return response.data;
     };
 
+    const getUserByID = async (id: any) => {
+        setLoading(true);
+        const response: any = await axios.get(`http://localhost:2000/api/user/${id}`, {
+            headers: {
+                "ngrok-skip-browser-warning": 'true'
+            }
+        });
+
+        setLoading(false);
+        return response.data.data;
+    };
+
     useEffect(() => {
         getServices();
         getchatParentHistory();
@@ -78,6 +90,7 @@ const Index = () => {
         getServices,
         placeOrder,
         sendMessage,
+        getUserByID,
         loading,
         services,
         chatParent,

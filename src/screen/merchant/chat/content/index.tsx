@@ -21,7 +21,15 @@ export const Index: React.FC<any> = () => {
                     <Box>
                       <Heading size='sm'>
                         {services?.name}
-                        <Tag size={'sm'} ml={2} variant='subtle' colorScheme={chatParent?.status === "Pending" ? `yellow` : chatParent?.status === "Proses" ? `blue` : `green`}>
+                        <Tag size={'sm'} ml={2} variant='subtle' colorScheme={
+                          chatParent?.status === "Pending"
+                            ? `yellow`
+                            : chatParent?.status === "Cancel"
+                            ? `red`
+                            : chatParent?.status === "Proses"
+                            ? `blue`
+                            : `green`
+                        }>
                           <TagLabel>{chatParent?.status}</TagLabel>
                         </Tag>
                       </Heading>

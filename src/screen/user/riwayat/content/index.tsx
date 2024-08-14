@@ -21,8 +21,9 @@ export const Index = () => {
     let mergeOrder: any = [];
     orders?.map(async (item: any) => {
       let resService: any = await getServicesByID(item.service_id);
-
-      mergeOrder.push({
+      const filterData = resService.filter((el: any) => el.rating !== null)
+      
+      filterData.push({
         ...item,
         service: resService,
       });

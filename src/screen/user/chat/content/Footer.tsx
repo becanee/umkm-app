@@ -32,6 +32,7 @@ import { useEffect, useState } from "react";
 import { getUserProfile } from "../../../../utils/cookie";
 import { useNavigate } from "react-router-dom";
 import { FcLike } from "react-icons/fc";
+import { HiOutlineX } from "react-icons/hi";
 
 const Footer = () => {
   const {
@@ -151,16 +152,22 @@ const Footer = () => {
           height={
             chatParent?.status === "Selesai" || chatParent?.status === "Proses"
               ? "10"
+              : chatParent?.status === "Cancel"
+              ? "10"
               : "20"
           }
           color="white"
           className={
-            chatParent?.status === "Pending"
+            chatParent?.status === "Cancel"
+              ? `m-auto bg-red-300 mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
+              : chatParent?.status === "Pending"
               ? `m-auto bg-blue-100 mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
               : chatParent?.status === "Proses"
               ? `m-auto bg-blue-300 mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
               : chatParent?.status === "Selesai"
-              ? `m-auto max-h-[2.8rem] ${chatParent?.rating ? 'bg-yellow-300' : 'bg-green-300'} mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
+              ? `m-auto max-h-[2.8rem] ${
+                  chatParent?.rating ? "bg-yellow-300" : "bg-green-300"
+                } mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
               : `m-auto bg-gray-300 mb-12 flex justify-center items-center fixed inset-x-0 bottom-0`
           }
         >
@@ -181,6 +188,15 @@ const Footer = () => {
                 >
                   <p className="text-md text-black justify-self-center flex">
                     Kirim Lokasi <GoLocation className="ml-2" size={22} />
+                  </p>
+                </div>
+              </>
+            ) : chatParent?.status === "Cancel" ? (
+              <>
+                <div className="grid grid-rows-1">
+                  <p className="text-md text-red justify-self-center flex">
+                    Merchant Tidak Menerima Pesanan
+                    <HiOutlineX className="ml-2" size={22} />
                   </p>
                 </div>
               </>
@@ -210,7 +226,10 @@ const Footer = () => {
                 </div>
               </>
             ) : chatParent?.rating ? (
-              <div className="grid grid-rows-1" onClick={() => navigate("/client/riwayat")}>
+              <div
+                className="grid grid-rows-1"
+                onClick={() => navigate("/client/riwayat")}
+              >
                 <p className="text-xl text-black justify-self-center">
                   Lihat Riwayat
                 </p>

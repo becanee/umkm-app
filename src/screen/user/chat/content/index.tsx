@@ -42,6 +42,8 @@ export const Index: React.FC<any> = () => {
                         colorScheme={
                           chatParent?.status === "Pending"
                             ? `yellow`
+                            : chatParent?.status === "Cancel"
+                            ? `red`
                             : chatParent?.status === "Proses"
                             ? `blue`
                             : `green`
