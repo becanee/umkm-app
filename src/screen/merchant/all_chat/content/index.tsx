@@ -39,7 +39,7 @@ export const Index = () => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <InputGroup className="mb-8">
           <InputLeftElement pointerEvents="none">
             <HiOutlineSearch size={20} />
@@ -51,7 +51,7 @@ export const Index = () => {
             boxShadow="md"
           />
         </InputGroup>
-      </div>
+      </div> */}
       {/* <div className="-ml-9 lg:-ml-9 min-w-[24.5rem] lg:min-w-[24.5rem] grid grid-cols-1 lg:grid-cols-1"> */}
       <ChatList
         className="chat-list min-w-full"

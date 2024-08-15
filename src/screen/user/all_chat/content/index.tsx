@@ -15,14 +15,14 @@ export const Index = () => {
 
   return (
     <>
-    <div>
+    {/* <div>
       <InputGroup className="mb-8">
         <InputLeftElement pointerEvents='none'>
           <HiOutlineSearch size={20} />
         </InputLeftElement>
         <Input type='text' placeholder='Cari kebutuhan mu!' borderRadius={15} boxShadow="md" />
       </InputGroup>
-    </div>
+    </div> */}
     <div className="-ml-8 w-[420px] grid grid-cols-1 lg:grid-cols-1">
     <ChatList
       className=''
