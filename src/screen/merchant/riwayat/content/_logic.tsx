@@ -9,7 +9,7 @@ const Index = () => {
   const getMyOrder = async () => {
     setLoading(true);
     const response: any = await axios.get(
-      `http://localhost:2000/api/client-all-order/${Cookies.get("_UID")}`,
+      `http://localhost:2000/api/merchant-all-order/${Cookies.get("_UID")}`,
       {
         headers: {
           "ngrok-skip-browser-warning": "true",

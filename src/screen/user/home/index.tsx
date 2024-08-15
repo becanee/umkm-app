@@ -43,7 +43,7 @@ export const ClientHome = () => {
         <>
             <NavBar />
             <SearchBar handleSearch={handleSearch} handleFilter={handleFilter} />
-            <div className="grid grid-cols-2 gap-4 mb-auto">
+            <div className="grid grid-cols-2 gap-4 mt-auto h-96 overflow-y-scroll ">
                 {
                     loading ? <>
                         <Skeleton mt={10} height='150px' />
