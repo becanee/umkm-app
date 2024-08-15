@@ -8,7 +8,7 @@ import { middleware } from '../controllers/auth/middlewareController';
 import { userLogout } from '../controllers/auth/logoutController';
 import { getCurrentLocation } from '../controllers/geolocation/geolocationController';
 import { addService, deleteService, getAllService, getServiceByCategory, getServiceByID, getServiceByMerchant, updateService } from '../controllers/services/serviceController';
-import { addRating, clientCreateNewChat, clientGetChatByID, clientGetOrderByID, getAllChatByChatID, getAllMessageByChatID, merchantGetChatByID, messagePlaceOrder, sendNewMessage } from '../controllers/chat/chatController';
+import { addRating, clientCreateNewChat, clientGetChatByID, clientGetOrderByID, getAllChatByChatID, getAllMessageByChatID, merchantGetChatByID, merchantGetOrderByID, messagePlaceOrder, sendNewMessage } from '../controllers/chat/chatController';
 import { uploadAvatar, uploadService } from '../controllers/upload/uploadController';
 
 // Create a new Router instance
@@ -66,6 +66,7 @@ router.get('/chat-history/:id', getAllMessageByChatID);
 router.get('/merchant-all-chat/:id', merchantGetChatByID);
 
 router.get('/client-all-order/:id', clientGetOrderByID);
+router.get('/merchant-all-order/:id', merchantGetOrderByID);
 router.post('/client-add-rating/:id', addRating);
 
 export default router;

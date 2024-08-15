@@ -193,6 +193,28 @@ export const clientGetOrderByID = async (req: Request, res: Response) => {
   }
 };
 
+export const merchantGetOrderByID = async (req: Request, res: Response) => {
+  try {
+    if (req.params.id) {
+      const response: any = await supabase
+        .from("chats")
+        .select(
+          "id, rating, comment, avatar, alt, title, subtitle, date, unread, status, client_id, merchant_id, service_id, created_at"
+        )
+        .eq("merchant_id", req.params.id)
+        .order("id", { ascending: true });
+
+      responseBuilder(res, response, response.status);
+    } else {
+      res.status(500).send({
+        message: "Params Required",
+      });
+    }
+  } catch (error: any) {
+    res.status(500).send(error.message);
+  }
+};
+
 export const addRating = async (req: Request, res: Response) => {
   try {
     if (req.params.id) {
